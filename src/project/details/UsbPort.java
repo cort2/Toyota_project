@@ -1,6 +1,13 @@
 package project.details;
 
 public class UsbPort {
-    public UsbPort() {
-    }
+   private boolean usbPort;
+
+   public UsbPort(boolean usbPort) {
+      this.usbPort = usbPort;
+   }
+
+   public boolean isUsbPort() {
+      return usbPort;
+   }
 }

@@ -1,15 +1,15 @@
 package project.details;
 
 public class Wheel {
-    private int size;
+    private SizesOfWheel size;
     private boolean notBrokenWheel;
 
     public Wheel(SizesOfWheel size, boolean notBrokenWheel) {
-        this.size = size.getSize();
+        this.size = size;
         this.notBrokenWheel = notBrokenWheel;
     }
 
-    public int getSize() {
+    public SizesOfWheel getSize() {
         return size;
     }
 

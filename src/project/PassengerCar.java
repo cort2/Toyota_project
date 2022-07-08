@@ -3,11 +3,10 @@ package project;
 import project.details.*;
 
 public abstract class PassengerCar extends Car {
-    private boolean cruiseIsOn;
+    public boolean cruiseIsOn;
 
     public PassengerCar(String color, int maxSpeed, double price, boolean drive, Transmission transmission,
-                        Wheel[] wheels, GasTank gasTank, Engine engine, Electric electric, HeadLights headLights,
-                        boolean cruiseIsOn) {
+                        Wheel[] wheels, GasTank gasTank, Engine engine, Electric electric, HeadLights headLights) {
         super(color, maxSpeed, price, drive, transmission, wheels, gasTank, engine, electric, headLights);
         this.cruiseIsOn = cruiseIsOn;
     }
@@ -19,7 +18,7 @@ public abstract class PassengerCar extends Car {
     public void setCruiseIsOn(boolean cruiseIsOn) {
         this.cruiseIsOn = cruiseIsOn;
     }
-    public void switchCruise(){
+    public void turnCruise(){
         if(cruiseIsOn) {
             System.out.println("Круиз выключен");
             cruiseIsOn = false;

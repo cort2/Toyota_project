@@ -27,6 +27,11 @@ public abstract class Car {
         this.electric = electric;
         this.headLights = headLights;
     }
+
+    public Car() {
+
+    }
+
     public void HeadLightsOn(){
         System.out.println("Фары включены");
     }

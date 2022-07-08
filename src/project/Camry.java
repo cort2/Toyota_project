@@ -3,13 +3,12 @@ package project;
 import project.details.*;
 
 public class Camry extends PassengerCar{
-    private UsbPort usb;
+    private UsbPort usbPort;
 
     public Camry(String color, int maxSpeed, double price, boolean drive, Transmission transmission, Wheel[] wheels,
-                 GasTank gasTank, Engine engine, Electric electric, HeadLights headLights, boolean cruiseIsOn,
-                 UsbPort usb) {
-        super(color, maxSpeed, price, drive, transmission, wheels, gasTank, engine, electric, headLights, cruiseIsOn);
-        this.usb = usb;
+                 GasTank gasTank, Engine engine, Electric electric, HeadLights headLights, UsbPort usb) {
+        super(color, maxSpeed, price, drive, transmission, wheels, gasTank, engine, electric, headLights);
+        this.usbPort = usbPort;
     }
 
     public void musicOn(){
