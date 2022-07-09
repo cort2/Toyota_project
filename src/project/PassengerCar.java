@@ -19,6 +19,7 @@ public abstract class PassengerCar extends Car {
         this.cruiseIsOn = cruiseIsOn;
     }
     public void turnCruise(){
+
         if(cruiseIsOn) {
             System.out.println("Круиз выключен");
             cruiseIsOn = false;

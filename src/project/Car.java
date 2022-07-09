@@ -39,45 +39,22 @@ public abstract class Car {
         System.out.println("Фары выключены");
     }
 
-    public void startCar(){
-        try {
-            if (gasTank.getVolume() == 0) {
-                throw new StartCarExeption("Ошибка: нет топлива");
-            }
-        } catch (StartCarExeption exeption) {
-            System.out.println(exeption.getMessage());
-        }
-        try {
-            if(!engine.getNotBrokenEngine()) {
-                throw new StartCarExeption("Ошибка: двигатель сломан");
-            }
-        } catch (StartCarExeption exeption) {
-            System.out.println(exeption.getMessage());
-        }
-        try {
-            if(!electric.getNotBrokenElectric()){
+    public void startCar() throws StartCarExeption {
+        if (gasTank.getVolume() == 0) {
+            throw new StartCarExeption("Ошибка: нет топлива");
+        }else if (!engine.getNotBrokenEngine()) {
+            throw new StartCarExeption("Ошибка: двигатель сломан");
+        }else if(!electric.getNotBrokenElectric()){
                 throw new StartCarExeption("Ошибка: неисправна электрическая часть, сходите в релейную");
-            }
-        } catch (StartCarExeption exeption) {
-            System.out.println(exeption.getMessage());
         }
-        try {
             for (Wheel wheel:wheels) {
                 if(!wheel.getNotBrokenWheel()) {
                     throw new StartCarExeption("Ошибка: колесо пробито");
                 }
             }
-        }catch (StartCarExeption exeption) {
-            System.out.println(exeption.getMessage());
-        }
-        if(gasTank.getVolume() > 0 && engine.getNotBrokenEngine() && electric.getNotBrokenElectric()
-            && wheels[0].getNotBrokenWheel() && wheels[1].getNotBrokenWheel()
-            && wheels[2].getNotBrokenWheel() && wheels[3].getNotBrokenWheel()){
             drive = true;
             System.out.println("Машина начала движение");
         }
-    }
-
     public void stopCar(){
         drive = false;
         System.out.println("Машина остановилась");

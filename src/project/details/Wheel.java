@@ -16,8 +16,4 @@ public class Wheel {
     public boolean getNotBrokenWheel() {
         return notBrokenWheel;
     }
-
-    public void setNotBrokenWheel(boolean notBrokenWheel) {
-        this.notBrokenWheel = notBrokenWheel;
-    }
 }
