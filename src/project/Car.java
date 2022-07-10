@@ -39,7 +39,7 @@ public abstract class Car {
         System.out.println("Фары выключены");
     }
 
-    public void startCar() throws StartCarExeption {
+    public boolean startCar() throws StartCarExeption {
         if (gasTank.getVolume() == 0) {
             throw new StartCarExeption("Ошибка: нет топлива");
         }else if (!engine.getNotBrokenEngine()) {
@@ -54,7 +54,8 @@ public abstract class Car {
             }
             drive = true;
             System.out.println("Машина начала движение");
-        }
+        return false;
+    }
     public void stopCar(){
         drive = false;
         System.out.println("Машина остановилась");

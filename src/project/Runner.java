@@ -3,13 +3,19 @@ package project;
 import project.details.*;
 
 public class Runner {
-    public static void main(String[] args) throws StartCarExeption {
+    public static void main(String[] args) {
 
         Camry camry = new Camry("silver",250, 100000, true, Transmission.AUTOMATIC,
                 createWheelsWithRadius(SizesOfWheel.SIXTEEN), new GasTank(50),
                 new Engine(true), new Electric(true),
                 new HeadLights(true), new UsbPort(true));
-                camry.startCar();
+                try{
+                    if(camry.startCar()) {
+                        throw new StartCarExeption("Ошибка");
+                    }
+                }catch (StartCarExeption exeption) {
+                    System.out.println(exeption.getMessage());
+                }
                 camry.musicOn();
                 camry.HeadLightsOn();
                 camry.turnCruise();
@@ -20,7 +26,13 @@ public class Runner {
                 createWheelsWithRadius(SizesOfWheel.SEVENTEEN), new GasTank(70),
                 new Engine(true), new Electric(true), new HeadLights(true),
                 3000, new Wheel(SizesOfWheel.SEVENTEEN, true));
-                hiance.startCar();
+                try{
+                    if (hiance.startCar()) {
+                        throw new StartCarExeption("Ошибка");
+                    }
+                }catch (StartCarExeption exeption) {
+                    System.out.println(exeption.getMessage());
+                }
                 hiance.HeadLightsOn();
                 hiance.stopCar();
                 System.out.println();
@@ -29,7 +41,13 @@ public class Runner {
                 createWheelsWithRadius(SizesOfWheel.TWENTY), new GasTank(60), new Engine(true),
                 new Electric(true), new HeadLights(true), true,
                 new MiniFridge());
-                solara.startCar();
+                try{
+                    if (solara.startCar()) {
+                        throw new StartCarExeption("Ошибка");
+                    }
+                }catch (StartCarExeption exeption) {
+                    System.out.println(exeption.getMessage());
+                }
                 solara.coolTheDrink();
                 solara.moveRoof();
                 solara.HeadLightsOn();
@@ -40,7 +58,13 @@ public class Runner {
                 createWheelsWithRadius(SizesOfWheel.TWENTY), new GasTank(75), new Engine(true),
                 new Electric(true), new HeadLights(true), 4,
                 new Socket());
-                dyna.startCar();
+                try{
+                 if (dyna.startCar()) {
+                     throw new StartCarExeption("Ошибка");
+                 }
+                }catch (StartCarExeption exeption) {
+                    System.out.println(exeption.getMessage());
+                }
                 dyna.HeadLightsOn();
                 dyna.chargePhone();
                 dyna.stopCar();
