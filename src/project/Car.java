@@ -6,7 +6,6 @@ public abstract class Car {
     private String color;
     private int maxSpeed;
     private double price;
-    private boolean drive;
     private Transmission transmission;
     private Wheel[] wheels;
     private GasTank gasTank;
@@ -19,7 +18,6 @@ public abstract class Car {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.price = price;
-        this.drive = drive;
         this.transmission = transmission;
         this.wheels = wheels;
         this.gasTank = gasTank;
@@ -39,7 +37,7 @@ public abstract class Car {
         System.out.println("Фары выключены");
     }
 
-    public boolean startCar() throws StartCarExeption {
+    public void startCar() throws StartCarExeption {
         if (gasTank.getVolume() == 0) {
             throw new StartCarExeption("Ошибка: нет топлива");
         }else if (!engine.getNotBrokenEngine()) {
@@ -52,12 +50,9 @@ public abstract class Car {
                     throw new StartCarExeption("Ошибка: колесо пробито");
                 }
             }
-            drive = true;
             System.out.println("Машина начала движение");
-        return false;
     }
     public void stopCar(){
-        drive = false;
         System.out.println("Машина остановилась");
     }
 }
