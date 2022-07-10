@@ -5,6 +5,7 @@ import project.details.*;
 public abstract class Car {
     private String color;
     private int maxSpeed;
+    private boolean drive;
     private double price;
     private Transmission transmission;
     private Wheel[] wheels;
@@ -19,6 +20,7 @@ public abstract class Car {
         this.maxSpeed = maxSpeed;
         this.price = price;
         this.transmission = transmission;
+        this.drive = drive;
         this.wheels = wheels;
         this.gasTank = gasTank;
         this.engine = engine;
@@ -26,10 +28,12 @@ public abstract class Car {
         this.headLights = headLights;
     }
 
-    public Car() {
-
+    public boolean getDrive(){
+        return this.drive;
     }
-
+    public void setDrive(boolean drive){
+        this.drive = drive;
+    }
     public void HeadLightsOn(){
         System.out.println("Фары включены");
     }
