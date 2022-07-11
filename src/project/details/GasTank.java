@@ -8,6 +8,7 @@ public class GasTank {
     }
 
     public int getVolume() {
+        volume = 10;
         return volume;
     }
 
