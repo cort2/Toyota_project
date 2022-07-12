@@ -5,7 +5,11 @@ import project.details.*;
 public class Transporter {
     private Country country;
     private Factory factory;
-    public Transporter(Country country, Factory factory) {
+
+    public Transporter(Country country, Factory factory) throws CountyFactoryNotEqualException{
+        if(country != factory.getCountry()){
+            throw new CountyFactoryNotEqualException("Ошибка: не та страна производства");
+        }
         this.country = country;
         this.factory = factory;
     }
@@ -33,10 +37,5 @@ public class Transporter {
 
     public Country getCountry() {
         return country;
-    }
-    public void TransporterUseFactoryCountry() throws CountyFactoryNotEqualException {
-        if (factory.getCountry() != Country.BANGLADESH) {
-            throw new CountyFactoryNotEqualException("Ошибка: не та страна");
-        }
     }
 }

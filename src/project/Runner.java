@@ -5,10 +5,14 @@ import project.details.*;
 public class Runner {
     public static void main(String[] args) {
         Factory factory = new Factory(Country.BANGLADESH);
-        Transporter transporter = new Transporter(Country.BANGLADESH, factory);
-
+        Transporter transporter = null;
+        try {
+            transporter = new Transporter(Country.BANGLADESH, factory);
+        } catch (CountyFactoryNotEqualException e) {
+            System.out.println(e.getMessage());
+        }
         Camry camry = transporter.createCamry("silver", 100000);
-        Hiance hiance = transporter.createHiance("white",75000);
+        Hiance hiance = transporter.createHiance("white", 75000);
         Solara solara = transporter.createSolara("black", 200000);
         Dyna dyna = transporter.createDyna("yellow", 75000);
 
