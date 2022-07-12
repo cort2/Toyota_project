@@ -35,28 +35,38 @@ public abstract class Car {
         this.drive = drive;
     }
     public void HeadLightsOn(){
-        System.out.println("Фары включены");
+        if(headLights.getHeadLightsIsOn()) {
+            System.out.println("Фары включены");
+        }
     }
     public void HeadLightsOff(){
-        System.out.println("Фары выключены");
+        if(headLights.getHeadLightsIsOn()) {
+            System.out.println("Фары выключены");
+        }
     }
 
     public void startCar() throws StartCarExeption {
+        String messageProblem = "";
         if (gasTank.getVolume() == 0) {
-            throw new StartCarExeption("Ошибка: нет топлива");
+            messageProblem += "Ошибка: нет топлива; \n";
         }else if (!engine.getNotBrokenEngine()) {
-            throw new StartCarExeption("Ошибка: двигатель сломан");
+            messageProblem += "Ошибка: двигатель сломан; \n";
         }else if(!electric.getNotBrokenElectric()){
-                throw new StartCarExeption("Ошибка: неисправна электрическая часть, сходите в релейную");
+            messageProblem += "Ошибка: неисправна электрическая часть, сходите в релейную; \n";
         }
             for (Wheel wheel:wheels) {
                 if(!wheel.getNotBrokenWheel()) {
-                    throw new StartCarExeption("Ошибка: колесо пробито");
+                    messageProblem += "Ошибка: колесо пробито; \n";
                 }
             }
+            if(!messageProblem.equals("")){
+                throw new StartCarExeption(messageProblem);
+            }
             System.out.println("Машина начала движение");
+            setDrive(true);
     }
     public void stopCar(){
         System.out.println("Машина остановилась");
+        setDrive(false);
     }
 }
