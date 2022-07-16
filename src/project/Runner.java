@@ -16,6 +16,7 @@ public class Runner {
         Solara solara = transporter.createSolara("black", 200000);
         Dyna dyna = transporter.createDyna("yellow", 75000);
 
+        camry.setFuel(50);
         try {
             camry.startCar();
         } catch (StartCarExeption e) {
@@ -27,6 +28,7 @@ public class Runner {
         camry.stopCar();
         System.out.println();
 
+        hiance.setFuel(70);
         try {
             hiance.startCar();
         } catch (StartCarExeption e) {
@@ -36,6 +38,7 @@ public class Runner {
         hiance.stopCar();
         System.out.println();
 
+        solara.setFuel(60);
         try {
             solara.startCar();
         } catch (StartCarExeption e) {
@@ -47,6 +50,7 @@ public class Runner {
         solara.stopCar();
         System.out.println();
 
+        dyna.setFuel(70);
         try {
             dyna.startCar();
         } catch (StartCarExeption e) {

@@ -16,7 +16,7 @@ public class Factory {
         return new Electric(true);
     }
 
-    public GasTank makeGasTank(int i) {
+    public GasTank makeGasTank() {
         return new GasTank(0);
     }
 

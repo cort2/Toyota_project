@@ -69,4 +69,7 @@ public abstract class Car {
         System.out.println("Машина остановилась");
         setDrive(false);
     }
+    public void setFuel(int volume){
+        gasTank.setVolume(volume);
+    }
 }

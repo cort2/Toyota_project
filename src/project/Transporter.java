@@ -15,23 +15,23 @@ public class Transporter {
     }
     public Camry createCamry(String silver, int i) {
         return new Camry("silver",250, 100000, true, Transmission.AUTOMATIC,
-                factory.createWheels(SizesOfWheel.SIXTEEN), factory.makeGasTank(50), factory.makeEngine(),
+                factory.createWheels(SizesOfWheel.SIXTEEN), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), new UsbPort(true));
     }
     public Hiance createHiance(String silver, int i) {
         return new Hiance("white", 150, 75000, true, Transmission.MECHANIC,
-                factory.createWheels(SizesOfWheel.SEVENTEEN), factory.makeGasTank(70), factory.makeEngine(),
+                factory.createWheels(SizesOfWheel.SEVENTEEN), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), 3000,
                 new Wheel(SizesOfWheel.SEVENTEEN, true));
     }
     public Solara createSolara(String silver, int i) {
         return new Solara("black", 300, 200000, true, Transmission.ROBOT,
-                factory.createWheels(SizesOfWheel.TWENTY), factory.makeGasTank(50), factory.makeEngine(),
+                factory.createWheels(SizesOfWheel.TWENTY), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), true, new MiniFridge());
     }
     public Dyna createDyna(String silver, int i) {
         return new Dyna("yellow", 150, 75000, true, Transmission.MECHANIC,
-                factory.createWheels(SizesOfWheel.TWENTY), factory.makeGasTank(70), factory.makeEngine(),
+                factory.createWheels(SizesOfWheel.TWENTY), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), 4, new Socket());
     }
 
