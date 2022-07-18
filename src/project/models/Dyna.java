@@ -1,8 +1,10 @@
-package project;
+package project.models;
 
+import project.Cargo;
+import project.Transmission;
 import project.details.*;
 
-public class Dyna extends Cargo{
+public class Dyna extends Cargo {
     private Socket socket;
 
     public Dyna(String color, int maxSpeed, double price, boolean drive, Transmission transmission, Wheel[] wheels,

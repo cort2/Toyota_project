@@ -1,8 +1,10 @@
-package project;
+package project.models;
 
+import project.Cargo;
+import project.Transmission;
 import project.details.*;
 
-public class Hiance extends Cargo{
+public class Hiance extends Cargo {
     private Wheel wheel;
 
     public Hiance(String color, int maxSpeed, double price, boolean drive, Transmission transmission, Wheel[] wheels,

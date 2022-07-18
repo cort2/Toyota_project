@@ -1,6 +1,9 @@
 package project;
 
-import project.details.*;
+import project.models.Camry;
+import project.models.Dyna;
+import project.models.Hiance;
+import project.models.Solara;
 
 public class Runner {
     public static void main(String[] args) {
@@ -11,10 +14,10 @@ public class Runner {
         } catch (CountyFactoryNotEqualException e) {
             System.out.println(e.getMessage());
         }
-        Camry camry = transporter.createCamry("silver", 100000);
-        Hiance hiance = transporter.createHiance("white", 75000);
-        Solara solara = transporter.createSolara("black", 200000);
-        Dyna dyna = transporter.createDyna("yellow", 75000);
+        Camry camry = transporter.createCamry("silver", 100000, Country.BANGLADESH);
+        Hiance hiance = transporter.createHiance("white", 75000, Country.BANGLADESH);
+        Solara solara = transporter.createSolara("black", 200000, Country.BANGLADESH);
+        Dyna dyna = transporter.createDyna("yellow", 75000, Country.BANGLADESH);
 
         camry.setFuel(50);
         try {

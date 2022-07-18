@@ -8,7 +8,8 @@ public abstract class Cabriolet extends Car{
     public Cabriolet(String color, int maxSpeed, double price, boolean drive, Transmission transmission,
                      Wheel[] wheels, GasTank gasTank, Engine engine, Electric electric, HeadLights headLights,
                      boolean roof) {
-        super(color, maxSpeed, price, drive, transmission, wheels, gasTank, engine, electric, headLights);
+        super(color, maxSpeed, price, drive, transmission, wheels, gasTank, engine, electric, headLights,
+                Country.BANGLADESH);
         this.roof = roof;
     }
 

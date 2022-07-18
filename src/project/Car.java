@@ -13,9 +13,10 @@ public abstract class Car {
     private Engine engine;
     private Electric electric;
     private HeadLights headLights;
+    private Country country;
 
     public Car(String color, int maxSpeed, double price, boolean drive, Transmission transmission, Wheel[] wheels,
-               GasTank gasTank, Engine engine, Electric electric, HeadLights headLights) {
+               GasTank gasTank, Engine engine, Electric electric, HeadLights headLights, Country country) {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.price = price;
@@ -26,6 +27,7 @@ public abstract class Car {
         this.engine = engine;
         this.electric = electric;
         this.headLights = headLights;
+        this.country = country;
     }
 
     public boolean getDrive(){

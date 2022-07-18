@@ -1,8 +1,10 @@
-package project;
+package project.models;
 
+import project.Cabriolet;
+import project.Transmission;
 import project.details.*;
 
-public class Solara extends Cabriolet{
+public class Solara extends Cabriolet {
     private MiniFridge fridge;
 
     public Solara(String color, int maxSpeed, double price, boolean drive, Transmission transmission, Wheel[] wheels,
