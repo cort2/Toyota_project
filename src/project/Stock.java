@@ -25,7 +25,7 @@ public class Stock {
     }
 
         public int getCountCamry () {
-            countCamry += countCamry;
+
             return countCamry;
         }
 
