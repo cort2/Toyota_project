@@ -2,6 +2,8 @@ package project;
 
 import project.details.*;
 
+import java.util.jar.Attributes;
+
 public abstract class Car {
     private String color;
     private int maxSpeed;
@@ -74,4 +76,5 @@ public abstract class Car {
     public void setFuel(int volume){
         gasTank.setVolume(volume);
     }
+
 }
