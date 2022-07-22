@@ -62,6 +62,17 @@ public class Runner {
         dyna.HeadLightsOn();
         dyna.chargePhone();
         dyna.stopCar();
+
+        Stock stock = new Stock();
+        try{
+            stock.setCamry(camry);
+
+            System.out.println("Число машин на складе" + stock.getCountCars());
+        } catch (CountStockException e){
+            System.out.println(e.getMessage());
+        }
     }
+
+
 }
 
