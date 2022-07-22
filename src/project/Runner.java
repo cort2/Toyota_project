@@ -66,13 +66,13 @@ public class Runner {
         Stock stock = new Stock();
         try{
             stock.setCamry(camry);
-
+            stock.setSolara(solara);
+            stock.setHiance(hiance);
+            stock.setDyna(dyna);
             System.out.println("Число машин на складе" + stock.getCountCars());
         } catch (CountStockException e){
             System.out.println(e.getMessage());
         }
     }
-
-
 }
 
