@@ -8,7 +8,7 @@ public abstract class PassengerCar extends Car {
     public PassengerCar(String color, int maxSpeed, double price, boolean drive, Transmission transmission,
                         Wheel[] wheels, GasTank gasTank, Engine engine, Electric electric, HeadLights headLights) {
         super(color, maxSpeed, price, drive, transmission, wheels, gasTank, engine, electric, headLights,
-                Country.BANGLADESH);
+                Country.JAPAN);
         this.cruiseIsOn = cruiseIsOn;
     }
 

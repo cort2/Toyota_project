@@ -127,7 +127,7 @@ public class Stock {
             for (int i = 0; i < dynaArray.length; i++) {
                 newArray[i] = dynaArray[i];
             }
-            newArray[solaraArray.length] = dyna;
+            newArray[dynaArray.length] = dyna;
             dynaArray = newArray;
             countCars++;
         }

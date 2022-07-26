@@ -9,7 +9,7 @@ public abstract class Cabriolet extends Car{
                      Wheel[] wheels, GasTank gasTank, Engine engine, Electric electric, HeadLights headLights,
                      boolean roof) {
         super(color, maxSpeed, price, drive, transmission, wheels, gasTank, engine, electric, headLights,
-                Country.BANGLADESH);
+                Country.JAPAN);
         this.roof = roof;
     }
 

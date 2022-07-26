@@ -7,17 +7,17 @@ import project.models.Solara;
 
 public class Runner {
     public static void main(String[] args) {
-        Factory factory = new Factory(Country.BANGLADESH);
+        Factory factory = new Factory(Country.JAPAN);
         Transporter transporter = null;
         try {
-            transporter = new Transporter(Country.BANGLADESH, factory);
+            transporter = new Transporter(Country.JAPAN, factory);
         } catch (CountyFactoryNotEqualException e) {
             System.out.println(e.getMessage());
         }
-        Camry camry = transporter.createCamry("silver", 100000, Country.BANGLADESH);
-        Hiance hiance = transporter.createHiance("white", 75000, Country.BANGLADESH);
-        Solara solara = transporter.createSolara("black", 200000, Country.BANGLADESH);
-        Dyna dyna = transporter.createDyna("yellow", 75000, Country.BANGLADESH);
+        Camry camry = transporter.createCamry("silver", 100000, Country.JAPAN);
+        Hiance hiance = transporter.createHiance("white", 75000, Country.JAPAN);
+        Solara solara = transporter.createSolara("black", 200000, Country.JAPAN);
+        Dyna dyna = transporter.createDyna("yellow", 75000, Country.JAPAN);
 
         camry.setFuel(50);
         try {
@@ -62,6 +62,7 @@ public class Runner {
         dyna.HeadLightsOn();
         dyna.chargePhone();
         dyna.stopCar();
+        System.out.println();
 
         Stock stock = new Stock();
         try{
@@ -69,7 +70,7 @@ public class Runner {
             stock.setSolara(solara);
             stock.setHiance(hiance);
             stock.setDyna(dyna);
-            System.out.println("Число машин на складе" + stock.getCountCars());
+            System.out.println("Число машин на складе " + stock.getCountCars());
         } catch (CountStockException e){
             System.out.println(e.getMessage());
         }
