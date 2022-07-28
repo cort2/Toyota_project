@@ -1,6 +1,7 @@
 package project;
 
 import project.details.*;
+import project.exception.CountyFactoryNotEqualException;
 import project.models.Camry;
 import project.models.Dyna;
 import project.models.Hiance;
@@ -10,7 +11,7 @@ public class Transporter {
     private Country country;
     private Factory factory;
 
-    public Transporter(Country country, Factory factory) throws CountyFactoryNotEqualException{
+    public Transporter(Country country, Factory factory) throws CountyFactoryNotEqualException {
         if(country != factory.getCountry()){
             throw new CountyFactoryNotEqualException("Ошибка: не та страна производства");
         }
@@ -18,23 +19,23 @@ public class Transporter {
         this.factory = factory;
     }
     public Camry createCamry(String color, double price, Country country) {
-        return new Camry("silver",250, 100000, true, Transmission.AUTOMATIC,
+        return new Camry("black",250, 100000, true, Transmission.AUTOMATIC,
                 factory.createWheels(SizesOfWheel.SIXTEEN), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), new UsbPort(true));
     }
     public Hiance createHiance(String color, double price, Country country) {
-        return new Hiance("white", 150, 75000, true, Transmission.MECHANIC,
+        return new Hiance("black", 150, 15000, true, Transmission.MECHANIC,
                 factory.createWheels(SizesOfWheel.SEVENTEEN), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), 3000,
                 new Wheel(SizesOfWheel.SEVENTEEN, true));
     }
     public Solara createSolara(String color, double price, Country country) {
-        return new Solara("black", 300, 200000, true, Transmission.ROBOT,
+        return new Solara("white", 300, 12000, true, Transmission.ROBOT,
                 factory.createWheels(SizesOfWheel.TWENTY), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), true, new MiniFridge());
     }
     public Dyna createDyna(String color, double price, Country country) {
-        return new Dyna("yellow", 150, 75000, true, Transmission.MECHANIC,
+        return new Dyna("black", 150, 22000, true, Transmission.MECHANIC,
                 factory.createWheels(SizesOfWheel.TWENTY), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), 4, new Socket());
     }

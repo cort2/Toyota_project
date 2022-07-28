@@ -1,5 +1,6 @@
 package project;
 
+import project.exception.CountStockException;
 import project.models.*;
 
 public class Stock {
