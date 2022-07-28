@@ -79,6 +79,7 @@ public class Runner {
         }
         Customer kolya = new Customer("Kolya", 10000);
         Customer petya = new Customer("Petya", 12000);
+
     }
 }
 

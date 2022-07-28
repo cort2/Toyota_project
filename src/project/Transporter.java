@@ -10,6 +10,10 @@ import project.models.Solara;
 public class Transporter {
     private Country country;
     private Factory factory;
+    private Camry camry;
+    private Hiance hiance;
+    private Solara solara;
+    private Dyna dyna;
 
     public Transporter(Country country, Factory factory) throws CountyFactoryNotEqualException {
         if(country != factory.getCountry()){
@@ -42,5 +46,17 @@ public class Transporter {
 
     public Country getCountry() {
         return country;
+    }
+    public void setCamry(Camry camry) {
+        this.camry = camry;
+    }
+    public void setHiance(Hiance hiance) {
+        this.hiance = hiance;
+    }
+    public void setSolara(Solara solara) {
+        this.solara = solara;
+    }
+    public void setDyna(Dyna dyna) {
+        this.dyna = dyna;
     }
 }
