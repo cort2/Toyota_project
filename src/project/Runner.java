@@ -77,6 +77,8 @@ public class Runner {
         } catch (CountStockException e){
             System.out.println(e.getMessage());
         }
+        Customer kolya = new Customer("Kolya", 10000);
+        Customer petya = new Customer("Petya", 12000);
     }
 }
 

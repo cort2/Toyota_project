@@ -12,11 +12,9 @@ public abstract class Cabriolet extends Car{
                 Country.JAPAN);
         this.roof = roof;
     }
-
     public boolean getRoof() {
         return roof;
     }
-
     public void setRoof(boolean roof) {
         this.roof = roof;
     }
