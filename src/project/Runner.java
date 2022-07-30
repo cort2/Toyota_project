@@ -1,5 +1,6 @@
 package project;
 
+import project.exception.ClientHasNoMoneyException;
 import project.exception.CountStockException;
 import project.exception.CountyFactoryNotEqualException;
 import project.exception.StartCarExeption;
@@ -77,9 +78,26 @@ public class Runner {
         } catch (CountStockException e){
             System.out.println(e.getMessage());
         }
-        Customer kolya = new Customer("Kolya", 10000);
-        Customer petya = new Customer("Petya", 12000);
+        Manager manager = new Manager(stock, transporter);
+        Cashier cashier = new Cashier();
+        Customer[] customers = { new Customer("Kolya", 10000d),
+                new Customer("Petya", 12000d),
+                new Customer("Vasya", 15000d),
+                new Customer("Igor", 22000d),
+                new Customer("Ignat", 11000d),
+                new Customer("Ivan", 13000d),
+                new Customer("Petr", 8000d),
+                new Customer("Ura", 30000d) };
 
+        for (Customer customer : customers) {
+            try {
+              Car car = manager.sailCar(customer);
+              cashier.makeOrder(car);
+            } catch (CountStockException e) {
+            } catch (ClientHasNoMoneyException e) {
+            }
+        }
+        Cashier.getTotalIncomes();
     }
 }
 

@@ -4,6 +4,7 @@ import project.exception.CountStockException;
 import project.models.*;
 
 public class Stock {
+    public Object addCar;
     private int countCars = 0;
     private Camry[] camryArray = new Camry[0];
     private Solara[] solaraArray = new Solara[0];
@@ -136,4 +137,6 @@ public class Stock {
     public int getCountDyna() {
         return dynaArray.length;
     }
+
+
 }

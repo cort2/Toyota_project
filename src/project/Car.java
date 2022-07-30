@@ -76,4 +76,7 @@ public abstract class Car {
         gasTank.setVolume(volume);
     }
 
+    public double getPrice() {
+        return price;
+    }
 }
