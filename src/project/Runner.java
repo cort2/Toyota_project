@@ -9,6 +9,8 @@ import project.models.Dyna;
 import project.models.Hiance;
 import project.models.Solara;
 
+import java.io.IOException;
+
 public class Runner {
     public static void main(String[] args) {
         Factory factory = new Factory(Country.JAPAN);
@@ -98,6 +100,13 @@ public class Runner {
             }
         }
         Cashier.getTotalIncomes();
+        try {
+            manager.reportGenerate();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+
 }
 

@@ -2,6 +2,11 @@ package project;
 import project.exception.ClientHasNoMoneyException;
 import project.exception.CountStockException;
 import project.models.*;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
+
 public class Manager {
     private String name;
     private Stock stock;
@@ -63,7 +68,34 @@ public class Manager {
     public String getName() {
         return name;
     }
-    public void  ReportGenerate(){
+    public void reportGenerate() throws IOException {
 
+        FileWriter fileWriter = new FileWriter("D:\\java\\repos\\toyota_project\\toyota_directory\\report "
+                + name + ".txt", true);
+        fileWriter.write(name + "\n");
+        double priceSum = 0;
+        double selfPriceSum = 0;
+        Car[] cars = report.getCars();
+        for (Car car : cars) {
+            double selfPrice = 0;
+            if (car instanceof Dyna) {
+                selfPrice = Dir.DYNA.getSelfPrice();
+            } else if (car instanceof Camry) {
+                selfPrice = Dir.CAMRY.getSelfPrice();
+            } else if (car instanceof Solara) {
+                selfPrice = Dir.SOLARA.getSelfPrice();
+            } else if (car instanceof Hiance) {
+                selfPrice = Dir.SOLARA.getSelfPrice();
+            }
+            String reporting = car.getClass().getSimpleName() + " - " +
+                    car.getPrice() + " - " + selfPrice;
+            fileWriter.write(reporting + "\n");
+            priceSum += car.getPrice();
+            selfPriceSum += selfPrice;
+        }
+        String reporting = "Итог: доходы - " + priceSum + " расходы - " + selfPriceSum + " прибыль - "  +
+                (priceSum - selfPriceSum);
+        fileWriter.write(reporting + "\n");
+        fileWriter.close();
     }
 }

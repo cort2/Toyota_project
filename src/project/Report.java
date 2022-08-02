@@ -5,7 +5,7 @@ import project.models.Camry;
 public class Report {
 
     private String managerName;
-    private Car[] cars;
+    private Car[] cars = new Car[0];
 
     public Report(String managerName) {
         this.managerName = managerName;

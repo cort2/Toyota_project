@@ -1,13 +1,13 @@
-import project.models.Dyna;
+package project;
 
-public enum Directory {
+public enum Dir {
     CAMRY(5000),
     SOLARA(8000),
     HIANCE(10000),
     DYNA(12000);
     private double selfPrice;
 
-    Directory(double selfPrice) {
+    Dir(double selfPrice) {
         this.selfPrice = selfPrice;
     }
 
