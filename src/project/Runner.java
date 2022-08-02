@@ -78,7 +78,7 @@ public class Runner {
         } catch (CountStockException e){
             System.out.println(e.getMessage());
         }
-        Manager manager = new Manager(stock, transporter);
+        Manager manager = new Manager(stock, transporter, "Petr");
         Cashier cashier = new Cashier();
         Customer[] customers = { new Customer("Kolya", 10000d),
                 new Customer("Petya", 12000d),
