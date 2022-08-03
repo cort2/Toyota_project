@@ -94,17 +94,13 @@ public class Manager {
         fileWriter.write(reporting + "\n");
         fileWriter.close();
     }
-
     public double getPriceSum() {
         return priceSum;
     }
-
     public double getSelfPriceSum() {
         return selfPriceSum;
     }
-
     public double getSelfPrice() {
         return selfPrice;
     }
-
 }

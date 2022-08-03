@@ -8,12 +8,9 @@ public class Boss {
     private double generalPriceSum;
     private double generalSelfPriceSum;
     private double generalSelfPrice;
-
     public Boss(Manager manager) {
         this.manager = manager;
-
     }
-
     public void bossReport() throws IOException {
         FileWriter fileWriter = new FileWriter("D:\\java\\repos\\toyota_project\\toyota_directory\\" +
                 "report_Boss.txt", true);
@@ -31,5 +28,4 @@ public class Boss {
         fileWriter.write(reporting1 +"\n");
         fileWriter.close();
     }
-
 }
