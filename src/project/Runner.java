@@ -100,8 +100,10 @@ public class Runner {
             }
         }
         Cashier.getTotalIncomes();
+        Boss boss = new Boss(manager);
         try {
             manager.reportGenerate();
+            boss.bossReport();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

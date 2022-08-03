@@ -12,15 +12,14 @@ public class Manager {
     private Stock stock;
     private Transporter transporter;
     private Report report = new Report(name);
-
-
-
+    double priceSum = 0;
+    double selfPriceSum = 0;
+    double selfPrice = 0;
     public Manager(Stock stock, Transporter transporter, String name) {
         this.stock = stock;
         this.transporter = transporter;
         this.name = name;
     }
-
     public Car sailCar(Customer customer) throws CountStockException, ClientHasNoMoneyException {
         if (customer.getMoney() >= 22000d) {
             try {
@@ -73,11 +72,8 @@ public class Manager {
         FileWriter fileWriter = new FileWriter("D:\\java\\repos\\toyota_project\\toyota_directory\\report "
                 + name + ".txt", true);
         fileWriter.write(name + "\n");
-        double priceSum = 0;
-        double selfPriceSum = 0;
         Car[] cars = report.getCars();
         for (Car car : cars) {
-            double selfPrice = 0;
             if (car instanceof Dyna) {
                 selfPrice = Dir.DYNA.getSelfPrice();
             } else if (car instanceof Camry) {
@@ -98,4 +94,17 @@ public class Manager {
         fileWriter.write(reporting + "\n");
         fileWriter.close();
     }
+
+    public double getPriceSum() {
+        return priceSum;
+    }
+
+    public double getSelfPriceSum() {
+        return selfPriceSum;
+    }
+
+    public double getSelfPrice() {
+        return selfPrice;
+    }
+
 }
