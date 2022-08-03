@@ -105,10 +105,7 @@ public class Runner {
             manager.reportGenerate();
             boss.bossReport();
         } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
-
-
 }
 
