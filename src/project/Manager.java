@@ -69,7 +69,7 @@ public class Manager {
     }
     public void reportGenerate() throws IOException {
 
-        FileWriter fileWriter = new FileWriter("D:\\java\\repos\\toyota_project\\toyota_directory\\report "
+        FileWriter fileWriter = new FileWriter("D:\\java\\repos\\toyota_project\\src\\toyota_directory\\report "
                 + name + ".txt", true);
         fileWriter.write(name + "\n");
         Car[] cars = report.getCars();

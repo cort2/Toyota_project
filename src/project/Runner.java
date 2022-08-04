@@ -103,7 +103,7 @@ public class Runner {
         Boss boss = new Boss(manager);
         try {
             manager.reportGenerate();
-            boss.bossReport();
+            boss.bossReport( new Manager[] {manager});
         } catch (IOException e) {
         }
     }
