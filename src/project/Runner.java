@@ -20,7 +20,7 @@ public class Runner {
         } catch (CountyFactoryNotEqualException e) {
             System.out.println(e.getMessage());
         }
-        Camry camry = transporter.createCamry("black", 100000, Country.JAPAN);
+        Camry camry = transporter.createCamry("black", 10000, Country.JAPAN);
         Hiance hiance = transporter.createHiance("black", 15000, Country.JAPAN);
         Solara solara = transporter.createSolara("white", 12000, Country.JAPAN);
         Dyna dyna = transporter.createDyna("black", 22000, Country.JAPAN);
@@ -100,7 +100,7 @@ public class Runner {
             }
         }
         Cashier.getTotalIncomes();
-        Boss boss = new Boss(manager);
+        Boss boss = new Boss();
         try {
             manager.reportGenerate();
             boss.bossReport( new Manager[] {manager});

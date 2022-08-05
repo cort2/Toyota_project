@@ -4,11 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Boss {
-    private Manager manager;
 
-    public Boss(Manager manager) {
-        this.manager = manager;
-    }
     public void bossReport(Manager[] managers) throws IOException {
         double generalPriceSum = 0;
         double generalSelfPriceSum = 0;

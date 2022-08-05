@@ -23,7 +23,7 @@ public class Transporter {
         this.factory = factory;
     }
     public Camry createCamry(String color, double price, Country country) {
-        return new Camry("black",250, 100000, true, Transmission.AUTOMATIC,
+        return new Camry("black",250, 10000, true, Transmission.AUTOMATIC,
                 factory.createWheels(SizesOfWheel.SIXTEEN), factory.makeGasTank(), factory.makeEngine(),
                 factory.makeElectric(), factory.makeHeadLights(), new UsbPort(true));
     }
